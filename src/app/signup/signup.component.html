@@ -1,0 +1,73 @@
+<div style="max-height: 100vh; margin-top: 64px">
+    <h1 style="text-align: center;">SignUp</h1>
+    <form style="margin: 20px;" (ngSubmit)="confirm()" [formGroup]="reactiveForm">
+      
+        <mat-form-field class="field" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input [formControl]="firstnControl" matInput placeholder="Enter Your Name" required>
+            <mat-icon matSuffix>person</mat-icon>
+            
+          </mat-form-field>
+          
+          <mat-form-field class="field" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input [formControl]="lastnControl" matInput placeholder="Enter Your Name" required>
+            <mat-icon matSuffix>person_outline</mat-icon>
+            
+          </mat-form-field>
+        
+          <mat-form-field class="field" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input [formControl]="emailControl" matInput placeholder="Enter Your Email" required>
+            <mat-icon matSuffix>email</mat-icon>
+            
+          </mat-form-field>
+        
+      <mat-form-field class="field" appearance="outline">
+        <mat-label>Mobile</mat-label>
+        <input [formControl]="mobileControl" matInput placeholder="Enter Your Mobile Number" required>
+        <mat-icon matSuffix>phone</mat-icon>
+        
+      </mat-form-field>
+    
+      <mat-form-field class="field" appearance="outline">
+        <mat-label>Address</mat-label>
+        <input [formControl]="addressControl" matInput placeholder="Enter Your Address" required>
+        <mat-icon matSuffix>place</mat-icon>
+        
+      </mat-form-field>
+  
+   
+      <mat-form-field class="field"  appearance="outline">
+        <mat-label>Password</mat-label>
+        <input name="passwordControl" #input max="6" [formControl]="passwordControl" matInput [type]="hide ? 'password' : 'text'" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-hint>{{input.value?.length }}/6</mat-hint>
+        <!-- <mat-error *ngIf="passwordControl.value?.length !=6">You must add 6 characters</mat-error> -->
+      </mat-form-field>
+      <div class="err" *ngIf="submitted && f.passwordControl.errors">
+        <div *ngIf="f.passwordControl.errors.maxlength">Password must at least 6 characters</div>
+      </div>
+    
+    
+      <mat-form-field class="field"  appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    
+      <div style="text-align: center;">
+      <button mat-flat-button type="submit" style="background-color: #4A148C;color:white; border-radius: 20px;text-align: center; width: 80%;">Register</button>
+    </div>
+  </form>
+      <h3 style="text-align: center;">or</h3>
+      <div style="text-align: center;">
+          <span>Already  Do You have an Account?</span>
+          <button mat-button color="primary"><a routerLink='/login' style="text-decoration: none;">Log In</a></button>
+      </div>
+    
+    </div>

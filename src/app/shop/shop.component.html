@@ -1,0 +1,26 @@
+
+
+  <mat-chip-list class="mat-chip-list-wrapper">
+    <mat-chip class="mat-chip">One fish</mat-chip>
+    <mat-chip class="mat-chip">Two fish</mat-chip>
+    <mat-chip class="mat-chip" color="primary" selected="true">Primary fish</mat-chip>
+    <mat-chip class="mat-chip" color="accent" selected="true">Accent fish</mat-chip>
+  </mat-chip-list>
+
+<div class="content">
+    <div fxLayout="column wrap" fxLayoutGap="16px grid" class="fx">
+      <div fxFlex="100%" *ngFor="let num of [1,2,3,4]">
+        <mat-card class="mat-elevation-z4" style="padding-bottom: 16px;" (click)="book()" >
+          <img mat-card-image src="./assets/cakes/cake1.jpg" >
+          <mat-card-content>
+            <p class="cakename">Name</p>
+            <p class="cakeprice">Price</p>
+          </mat-card-content>
+          <mat-card-actions>
+              <button mat-button btn class="addtocart">Add to cart</button>
+          </mat-card-actions>
+         
+        </mat-card>
+      </div>
+    </div>
+    </div>

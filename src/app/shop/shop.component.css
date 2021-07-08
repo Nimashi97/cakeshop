@@ -1,0 +1,38 @@
+.fx
+{
+   margin: 5px; 
+}
+.content {
+    padding: 16px;
+}
+.cakename
+{
+    font-weight: bold;
+    text-align: center;
+}
+.cakeprice{
+    text-align: center;
+}
+.addtocart{
+    background-color: rgb(145, 10, 93);
+    color: white;
+    width: 100%;
+}
+
+.example-box.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  .example-chip .cdk-drop-list-dragging {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  .mat-chip-list-wrapper {
+    display:flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+    .mat-chip {
+      display: inline-block;
+      overflow: auto;
+    }
+  

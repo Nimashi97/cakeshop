@@ -1,0 +1,6 @@
+{
+	"appId": "com.nimashi.cakeshop",
+	"appName": "cakeshop",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,39 @@
+<mat-toolbar style="background-color: white;position: fixed;top: 0;z-index: 999;" >
+  <button mat-icon-button>
+    <mat-icon (click)="back()">chevron_left</mat-icon>
+    </button>
+  <span style="text-align: center;">Nim's Bites</span>
+  <span class="example-spacer"></span>
+  <button routerLink="/mycart" mat-icon-button  aria-label="Example icon-button with menu icon">
+  <mat-icon matBadge="{{cartItem}}" matBadgeColor="warn"  style="display: flex;justify-content: right;">shopping_cart</mat-icon>
+</button>
+<!-- Include text description of the icon's meaning for screen-readers -->
+</mat-toolbar>
+<div class="container" style="margin-top: 60px;">
+<div>
+  <img class="img" src="{{image}}" style="border-radius: 10px;">
+  <div>
+      
+      
+      <p style="text-transform: uppercase;margin-top: 10px;">{{name}}</p>
+      <p >Cake No : {{id}}</p>
+      <p >{{price}}</p>
+      
+        <p >{{description}}</p>
+          
+          <section style="text-align: center; border: 1 px solid black;">
+       <Button (click)="minus()" class="btn">-</Button>
+      <span>{{num1}} kg</span>
+      
+      <Button (click)="plus()" class="btn">+</Button>
+    </section>
+</div>
+<button class="mine" mat-flat-button color="primary" (click)="addtocart()">
+  <mat-icon>add_shopping_cart</mat-icon>
+  Add to cart
+  
+</button>
+
+
+</div>
+

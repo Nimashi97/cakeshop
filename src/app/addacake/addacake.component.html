@@ -1,0 +1,45 @@
+<div class="container" style="margin-top: 20px;">
+    
+    <div style="max-height: 100vh; margin-top: 15%;">
+        <h1 style="text-align: center;">Add Item</h1>
+        <div>
+          <img [src]="url" style="height: 200px; width: 100%;"><br>
+          <input type="file"  (change)="onselectFile($event)">
+            <mat-form-field class="field" appearance="outline">
+                <mat-label>Item name</mat-label>
+                <input matInput placeholder="Enter Your Item Name">
+                <mat-icon matSuffix>cake</mat-icon>
+                
+              </mat-form-field>
+              <mat-form-field class="field" appearance="outline">
+                <mat-label>Item Price</mat-label>
+                <input matInput placeholder="Enter Your Item price">
+                <mat-icon matSuffix>price</mat-icon>
+                
+              </mat-form-field>
+        
+              <mat-form-field class="field" appearance="outline">
+                <mat-label>Category</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="food">
+                  <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              
+                <textarea cols="60" rows="10"></textarea>
+                
+              
+
+                <div class="btn-group">
+                  <button class="mine" mat-flat-button color="primary" >
+                    Add </button>
+                  
+        
+        
+          
+        </div>
+        </div>
+    
+    

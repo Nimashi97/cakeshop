@@ -1,0 +1,30 @@
+.img
+{
+    width: 100%;
+    height: 200px;
+}
+.bracket-inputs {
+    min-width: 215px;
+    width: 50%;
+    max-width: 500px;
+  }
+  .addtocart
+  {
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
+  }
+  .mine{
+    
+      width: 100%;
+      margin-bottom: 20px;
+  }
+  .back{
+    position: fixed;
+      top: 5px;
+      left: 10px;
+     
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }

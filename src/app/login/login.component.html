@@ -1,0 +1,27 @@
+<div style="max-height: 100vh; margin-top: 45%;">
+<h1 style="text-align: center;">Login</h1>
+<div style="margin: 20px;">
+<mat-form-field class="field" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input [formControl]="emailControl" matInput placeholder="Enter Your Email" required>
+    <mat-icon matSuffix>email</mat-icon>
+    
+  </mat-form-field>
+
+  <mat-form-field class="field"  appearance="outline">
+    <mat-label>Password</mat-label>
+    <input [formControl]="passwordControl" matInput [type]="hide ? 'password' : 'text'" required>
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <div style="text-align: center;">
+    <button (click)="login()" mat-flat-button style="background-color: #4A148C;color:white; border-radius: 20px;text-align: center; width: 80%;">Login</button>
+  </div>
+  <h3 style="text-align: center;">or</h3>
+  <div style="text-align: center;">
+      <span>Don't you have an acount yet</span>
+      <button mat-button color="primary"><a routerLink='/signup'>SignUp</a></button>
+  </div>
+</div>
+</div>

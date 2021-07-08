@@ -1,0 +1,28 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .example-container {
+    width: 100%;
+    height: auto;
+    bottom: 0px;
+    position: absolute;
+    top: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    
+    display: flex;
+    align-items: top;
+    justify-content: top;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+  a
+  {
+    text-decoration: none;
+   
+  }
+  

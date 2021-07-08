@@ -1,0 +1,34 @@
+<app-main>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+            <mat-selection-list #shoes [multiple]="false">
+              <mat-list-option>
+               <a (click)="drawer.toggle()" routerLink="">Home</a>
+              </mat-list-option>
+              <mat-list-option>
+                <a (click)="drawer.toggle()" routerLink="/speciality_list">SHOP</a>
+               </mat-list-option>
+               
+               <mat-list-option>
+                <a (click)="drawer.toggle()" routerLink="/doctor_list">Login</a>
+               </mat-list-option>
+               
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                      <mat-expansion-panel-header>
+                      <mat-panel-title>
+                      Self aware panel
+                      </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <p>I'm visible because I am open</p>
+                  </mat-expansion-panel>
+               
+               
+            </mat-selection-list>
+    </mat-drawer>
+  
+    <router-outlet>
+  
+    </router-outlet>
+  
+  </mat-drawer-container>

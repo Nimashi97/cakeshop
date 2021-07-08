@@ -1,0 +1,136 @@
+
+ <!-- <div class="container-fluid" style="margin-top: 64px;">
+  <mat-card style="height: 120px;">
+    
+   <mat-card-content >
+      
+    <section style="float: left;">
+      <img mat-card-image src="./assets/cakes/cake1.jpg" style="width: 120px;height: 120px;padding: 10px;">
+    </section>
+    <section style="text-align: center;">
+
+         <h4> price</h4>
+
+    </section>
+   
+   <section style="display: flex;flex-direction:column">
+    <Button class="btn " (click)="minus()" >
+      <mat-icon>indeterminate_check_box</mat-icon>
+    </Button>
+    <span>{{num1}} kg</span>
+    
+    <Button class="btn " (click)="plus()" >
+      <mat-icon>add_box</mat-icon>
+    </Button>
+   </section>
+   
+   
+ 
+  <section style="float:right;display: flex;flex-direction:column">
+    <Button class="btn " >
+      <mat-icon>delete</mat-icon>
+    </Button>
+   
+   </section>
+  </mat-card-content>
+    </mat-card>
+</div> -->
+<!-- <div class="container-fluid"style="margin-top: 70px;">
+  <mat-card style="height: 140px;">
+    
+      <table style="width: 100%;border-collapse: collapse;border-spacing: 0;">
+        <tr>
+          <td  rowspan="3" style="vertical-align:middle;">
+            <img mat-card-image src="./assets/cakes/cake1.jpg" style="width: 120px;height: 120px;padding: 10px;">
+          </td>
+          
+          <td  colspan="3" class="align-baseline"style="padding-left:20px;">
+            <h4> Namedhdjvhbdjvnjdv</h4>
+            </td>
+          </tr>
+          <tr>
+            <td  colspan="3" class="align-baseline" style="padding-left:20px;margin-top: 0;">
+              <h4> price</h4>
+              </td>
+            </tr>
+           
+            <tr>
+            <td>
+            <button mat-icon-button (click)="minus()"  >
+              <mat-icon>minimize</mat-icon>
+            </button>
+            </td>
+            <td>
+            <div>{{num1}} kg</div>
+          </td>
+          <td>
+            <button mat-icon-button (click)="plus()" >
+              <mat-icon>add</mat-icon>
+            </button>
+          </td>
+          <td rowspan="3">
+            
+            <button mat-mini-fab color="warn" style="vertical-align: top;padding-bottom:40px;" >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+          
+        </tr>
+          
+       
+      </table>
+    
+  </mat-card>
+</div> -->
+ 
+ <div class="container-fluid" style="margin-top: 64px;">
+  <div *ngIf="getCartDetails== 0" style="justify-content: center;">
+    no data
+  </div>
+<div *ngFor="let getCartDetail of getCartDetails" style="margin-bottom: 10px;display:block;">
+  <mat-card>
+    <img mat-card-image src="{{getCartDetail.image1}}" style="display: flex;float: left;width: 120px;height: 130px;padding:12px;box-shadow: 0;">
+  <mat-card-title>
+    <div >
+      <h5 style="margin-left: 110px;">{{getCartDetail.name1}}</h5>
+      
+      <button mat-icon-button class="bttn"   (click)="minus(getCartDetail.id1,getCartDetail.amount)" style="margin-left: 10px;font-size: 10px;" >
+        <mat-icon>remove_circle_outline</mat-icon>
+      </button>
+      <span style="font-size: 11px;">{{getCartDetail.amount}} kg</span>
+      
+      <button mat-icon-button class="bttn" (click)="plus(getCartDetail.id1,getCartDetail.amount)"  style="font-size: 10px;">
+        <mat-icon>add_circle_outline</mat-icon>
+      </button>
+      <h5 style="margin-left: 100px;">
+        Rs.{{getCartDetail.price1 * getCartDetail.amount | number}}
+      </h5>
+      
+    
+    <mat-card-actions>
+      <button mat-icon-button color="warn" style="float: right;" (click)="singleDelete(getCartDetail.id1)">
+        <mat-icon>delete</mat-icon>
+      </button>
+     
+    </mat-card-actions>
+  </div>
+  </mat-card-title>
+  
+  
+  
+</mat-card>
+  </div>
+  
+
+</div>
+
+
+<mat-toolbar class="bottomnav">
+  <h4 >Total - Rs.{{total}}</h4>
+  <span class="example-spacer"></span>
+  <button mat-flat-button color="accent" class="bttn" aria-label="Checkout" (click)="openDialog()">
+  Checkout
+</button>
+
+  
+</mat-toolbar>
